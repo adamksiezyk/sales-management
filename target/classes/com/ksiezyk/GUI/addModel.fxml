@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane minHeight="400.0" minWidth="800.0" onKeyPressed="#keyPressed" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ksiezyk.GUI.AddModelController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="800.0" />
+      <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="150.0" minHeight="150.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="250.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <StackPane minHeight="150.0" minWidth="800.0" style="-fx-background-color: lightblue;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Label text="Wariant:" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" maxWidth="200.0" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="100.0" />
+               </StackPane.margin>
+            </TextField>
+            <Label text="Ilość:" StackPane.alignment="CENTER_LEFT">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="quantityField" maxWidth="200.0" StackPane.alignment="CENTER_LEFT">
+               <StackPane.margin>
+                  <Insets left="100.0" />
+               </StackPane.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#addModel" text="Dodaj" StackPane.alignment="BOTTOM_LEFT">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </StackPane>
+      <VBox minHeight="250.0" minWidth="800.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="modelsTable" minHeight="250.0" minWidth="800.0" VBox.vgrow="ALWAYS">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#deleteModel" text="Usuń" />
+                      <MenuItem mnemonicParsing="false" onAction="#editModel" text="Edytuj" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</GridPane>
